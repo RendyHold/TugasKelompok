@@ -1,11 +1,9 @@
-/* =========================================
-   1. GLOBAL & FONT
-   ========================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@700;800&display=swap');
 
 :root {
-    --primary-color: #2E7D32; /* Hijau Eco */
-    --accent-color: #FFC107;  /* Kuning Emas */
+    --primary-color: #2E7D32; 
+    --accent-color: #FFC107;  
 }
 
 body {
@@ -18,16 +16,14 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-family: 'Raleway', sans-serif;
 }
 
-/* Jarak antar section */
+
 section {
     padding-top: 80px;
     padding-bottom: 80px;
-    scroll-margin-top: 60px; /* Supaya judul tidak ketutup navbar */
+    scroll-margin-top: 60px; 
 }
 
-/* =========================================
-   2. NAVBAR & HEADER
-   ========================================= */
+
 .nav-link {
     color: #555 !important;
     font-weight: 500;
@@ -38,7 +34,7 @@ section {
     color: var(--primary-color) !important;
 }
 
-/* Hero Parallax */
+
 .hero-section {
     min-height: 85vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), 
@@ -49,14 +45,11 @@ section {
     color: white;
 }
 
-/* =========================================
-   3. COMPONENTS
-   ========================================= */
-/* Warna Custom Bootstrap */
+
 .text-success { color: var(--primary-color) !important; }
 .bg-success { background-color: var(--primary-color) !important; }
 
-/* Icon Box Bulat (Untuk Cara Buat) */
+
 .icon-box {
     width: 60px;
     height: 60px;
@@ -67,7 +60,7 @@ section {
     font-weight: bold;
 }
 
-/* Card Hover Effect */
+
 .card-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -76,32 +69,26 @@ section {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
-/* =========================================
-   4. TIM SECTION (KOCAK / TIDAK BULAT)
-   ========================================= */
-/* Ubah foto jadi kotak dengan sudut tumpul */
+
 .team-item img {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    /* rounded-4 sudah ada di HTML bootstrap (sudut melengkung besar) */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efek membal */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
-/* Efek Hover: Miring sedikit & Zoom */
+
 .team-item:hover img {
     transform: scale(1.1) rotate(5deg);
     border-color: var(--accent-color) !important;
 }
 
-/* Variasi: Foto genap miring ke kiri saat hover */
+
 .team-item:nth-child(even):hover img {
     transform: scale(1.1) rotate(-5deg);
 }
 
-/* =========================================
-   5. RESPONSIVE
-   ========================================= */
+
 @media (max-width: 768px) {
     .hero-section h1 { font-size: 2.5rem; }
     section { padding-top: 50px; padding-bottom: 50px; }

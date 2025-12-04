@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mobileMenu.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        mobileMenu.classList.toggle('active'); // Jika ingin animasi icon
+        mobileMenu.classList.toggle('active'); 
     });
 
-    // Menutup menu saat link diklik
+    /
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
