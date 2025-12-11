@@ -1,16 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navMenu = document.querySelector('.nav-menu');
+    // Menyediakan ScrollSpy bawaan Bootstrap agar menu navbar menyorot bagian aktif saat halaman di-scroll.
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse && window.bootstrap) {
+        new bootstrap.ScrollSpy(document.body, {
+            target: '#mainNav',
+            offset: 120
+        });
+    }
 
-    mobileMenu.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        mobileMenu.classList.toggle('active'); 
-    });
+    // Menutup menu collapse setelah tautan diklik (berguna di layar kecil/mobile).
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navLinks = document.querySelectorAll('#navbarNav .nav-link');
 
-    /
-    document.querySelectorAll('.nav-menu a').forEach(link => {
+    navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
+            const togglerVisible = navbarToggler && window.getComputedStyle(navbarToggler).display !== 'none';
+            if (togglerVisible) {
+                navbarToggler.click();
+            }
         });
     });
 });
